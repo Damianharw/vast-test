@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VAST version="3.0">
+  <Ad id="test-1">
+    <InLine>
+      <AdSystem>debug</AdSystem>
+      <AdTitle>VAST debug</AdTitle>
+
+      <Impression><![CDATA[https://unchained.management/api/debug/vast/track?e=impression]]></Impression>
+
+      <Creatives>
+
+        <!-- 1) LINEAR -->
+        <Creative sequence="1" id="linear-1">
+          <Linear skipoffset="00:00:07">
+            <Duration>00:00:15</Duration>
+
+            <TrackingEvents>
+              <Tracking event="start"><![CDATA[https://unchained.management/api/debug/vast/track?e=start]]></Tracking>
+              <Tracking event="firstQuartile"><![CDATA[https://unchained.management/api/debug/vast/track?e=firstQuartile]]></Tracking>
+              <Tracking event="midpoint"><![CDATA[https://unchained.management/api/debug/vast/track?e=midpoint]]></Tracking>
+              <Tracking event="thirdQuartile"><![CDATA[https://unchained.management/api/debug/vast/track?e=thirdQuartile]]></Tracking>
+              <Tracking event="complete"><![CDATA[https://unchained.management/api/debug/vast/track?e=complete]]></Tracking>
+            </TrackingEvents>
+
+            <VideoClicks>
+              <ClickThrough><![CDATA[https://alza.sk]]></ClickThrough>
+              <ClickTracking><![CDATA[https://unchained.management/api/debug/vast/track?e=click]]></ClickTracking>
+            </VideoClicks>
+
+            <MediaFiles>
+              <MediaFile delivery="progressive" type="video/mp4" width="1280" height="720">
+                <![CDATA[https://unchained.b-cdn.net/PUBLIC/-768132103983565597.mp4]]>
+              </MediaFile>
+            </MediaFiles>
+          </Linear>
+        </Creative>
+
+        <!-- 2) NON-LINEAR OVERLAY -->
+        <Creative sequence="1" id="nonlinear-1">
+          <NonLinearAds>
+            <TrackingEvents>
+              <Tracking event="creativeView"><![CDATA[https://unchained.management/api/debug/vast/track?e=overlay_view]]></Tracking>
+            </TrackingEvents>
+
+            <NonLinear width="320" height="100">
+              <StaticResource creativeType="image/png">
+                <![CDATA[https://unchained.b-cdn.net/PUBLIC/%E2%80%94Pngtree%E2%80%94blank%20comic%20speech%20bubble%20message_9024960.png]]>
+              </StaticResource>
+
+              <NonLinearClickThrough><![CDATA[https://alza.sk]]></NonLinearClickThrough>
+            </NonLinear>
+          </NonLinearAds>
+        </Creative>
+
+        <!-- 3) COMPANION -->
+        <Creative sequence="1" id="companion-1">
+          <CompanionAds>
+            <Companion width="300" height="250">
+              <StaticResource creativeType="image/png">
+                <![CDATA[https://unchained.b-cdn.net/PUBLIC/%E2%80%94Pngtree%E2%80%94blank%20comic%20speech%20bubble%20message_9024960.png]]>
+              </StaticResource>
+              <CompanionClickThrough><![CDATA[https://alza.sk]]></CompanionClickThrough>
+              <TrackingEvents>
+                <Tracking event="creativeView"><![CDATA[https://unchained.management/api/vast/track?e=companion_view]]></Tracking>
+              </TrackingEvents>
+            </Companion>
+          </CompanionAds>
+        </Creative>
+
+      </Creatives>
+
+      <Error><![CDATA[https://unchained.management/api/vast/track?e=error&code=[ERRORCODE]]]></Error>
+
+    </InLine>
+  </Ad>
+</VAST>
