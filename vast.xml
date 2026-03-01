@@ -11,7 +11,7 @@
 
         <!-- 1) LINEAR -->
         <Creative sequence="1" id="linear-1">
-          <Linear skipoffset="00:00:07">
+          <Linear skipoffset="00:00:03">
             <Duration>00:00:15</Duration>
 
             <TrackingEvents>
@@ -29,7 +29,7 @@
 
             <MediaFiles>
               <MediaFile delivery="progressive" type="video/mp4" width="1280" height="720">
-                <![CDATA[https://vz-e0e8dd38-a0e.b-cdn.net/18e04b44-fb5e-41a4-a0f7-c015af42b64f/play_720p.mp4]]>
+                <![CDATA[https://vz-e0e8dd38-a0e.b-cdn.net/9897f054-79b3-4117-b49a-dd4e77e2bd51/play_720p.mp4]]>
               </MediaFile>
             </MediaFiles>
           </Linear>
